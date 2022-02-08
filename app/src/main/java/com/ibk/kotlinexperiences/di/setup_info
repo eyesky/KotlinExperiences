@@ -1,0 +1,34 @@
+--------------------I've included in module gradle file---------------------
+
+    // added hilt and kapt within plugin section
+    plugins {
+        id 'dagger.hilt.android.plugin'
+        id 'kotlin-kapt'
+    }
+
+    // added hilt dependency in dependency section
+    def hilt_version = '2.40.5'
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // I've added kapt block below the dependency section in app gradle
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes = true
+    }
+--------------------I've included in project gradle file----------------------
+Remember: you should use buildscript at the top of file in project gradle
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.40.5'
+    }
+}
+-------------------------------------------------------------------------------
+
+After creating application class I've added application name
+in application section in AndroidManifest.xml file
+
+-------------------------------------------------------------------------------

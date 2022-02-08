@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KotlinExperiences</string>
+
+    <string name="data_store">Data Store Preferences</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>
